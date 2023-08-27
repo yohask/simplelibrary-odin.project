@@ -1,4 +1,4 @@
-# Simple Library Project Documentation
+# Simple Library Project
 
 ## Overview
 
@@ -34,4 +34,4 @@ The "Simple Library" project is a web app for managing a virtual book library. I
 
 ## Conclusion
 
-The "Simple Library" project is a user-friendly web app for managing your book collection. This documentation provides an overview of its structure, styling, and functionality.
+The "Simple Library" project is a user-friendly web app for managing your book collection
