@@ -1,0 +1,210 @@
+:root {
+    /* --title-col-width: 150px;
+    --auth-col-width: 150px;
+    --page-col-width: 100px;
+    --completed-col-width: 100px; */
+    --shadow-1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  /* Basic resets */
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  /* Main Styling */
+  
+  #new-book {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    box-shadow: var(--shadow-1);
+  }
+  
+  .main-container {
+    padding: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .main-container h2 {
+    margin: 1rem 0;
+  }
+  
+  .main-container p {
+    margin: 2rem 0;
+  }
+  
+  /* Library */
+  
+  .library .headers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.5fr 30px;
+    list-style: none;
+  }
+  
+  .headers li {
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .books {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .book {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.5fr 30px;
+  }
+  
+  .book:hover {
+    background: rgb(222, 222, 222);
+  }
+  
+  .book > div {
+    padding: 0.5rem;
+  }
+  
+  .delete-book {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border: none;
+    color: white;
+    background: rgb(247, 38, 38);
+    display: none;
+  }
+  
+  .book:hover .delete-book {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .book .label {
+    display: none;
+  }
+  
+  .book .completed input {
+    cursor: pointer;
+  }
+  
+  /* Form Section */
+  
+  .new-book-form {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(31, 31, 31, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: crosshair;
+  }
+  
+  .new-book-form form {
+    background: rgb(237, 237, 237);
+    padding: 2rem;
+    width: 500px;
+    margin: 2rem auto 0;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border: 1px solid rgb(164, 218, 237);
+    cursor: default;
+  }
+  
+  .new-book-form form > h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .item-box {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .item-box > input {
+    padding: 0.3rem 0.5rem;
+    box-shadow: 0 0 3px 1px rgb(125, 125, 125);
+    border: none;
+    margin-top: 0.3rem;
+  }
+  .item-box > input:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px rgb(23, 103, 164);
+  }
+  
+  .radio-box {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .radio-box > label {
+    padding-right: 1rem;
+    padding-left: 0.4rem;
+  }
+  .radio-box > p {
+    padding-right: 1rem;
+  }
+  
+  .new-book-form .btn-box {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Class styling */
+  
+  .btn-1 {
+    padding: 0.5rem 0.8rem;
+    background: rgb(78, 117, 142);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0 0.8rem;
+    cursor: pointer;
+  }
+  
+  /*
+  Have square cards when page is large. Switch to table layout when small.
+    - Hide .headers when small
+    - Show .label when small
+    - Change books and book layout
+*/
+  
+  @media (min-width: 800px) {
+    .library .headers {
+      display: none;
+    }
+    .books {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -10px;
+    }
+    .book {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      margin: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0 0 5px;
+    }
+    .book .delete-book {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .book .label {
+      display: inline;
+    }
+  }
